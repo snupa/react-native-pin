@@ -31,8 +31,13 @@
     NSData *localCertData = [NSData dataWithContentsOfFile:cerPath];
     
     NSMutableArray *pinnedCertificates = [NSMutableArray array];
-    for (NSData *certificateData in @[localCertData]) {
-        [pinnedCertificates addObject:(__bridge_transfer id)SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certificateData)];
+    @try {
+        [pinnedCertificates addObject:(__bridge_transfer id)SecCertificateCreateWithData(nil, (__bridge CFDataRef)localCertData)];
+    
+    }
+    @catch(NSException *e) {
+        NSLog(@"%@", e.reason);
+        NSLog(@"%@", localCertData);
     }
     return pinnedCertificates;
 }
