@@ -1,0 +1,19 @@
+{
+  "name": "react-native-pin",
+  "version": "0.0.13",
+  "description": "React Native fetch pin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snupa/react-native-pin"
+  },
+  "author": "UNLOQ Systems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snupa/react-native-pin/issues"
+  },
+  "devDependencies": {
+    "react": "^15.3.x",
+    "react-native": "^0.34"
+  }
+}
